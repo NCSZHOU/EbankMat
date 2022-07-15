@@ -15,6 +15,19 @@ then use the plugin "docker-maven-plugin" to push the image to remote Docker ser
 properties and services, then run the script in "Ebank-JWT/script" for deploy the images for nodes.
 Same to project Ebank-commons.
 
+Prerequisite:
+   Local:
+      MYSQL: 127.0.0.1:3306/
+         database name: cqjdudb
+         user name: root
+         password:
+         tables: details in the "Description" above
+      kafka:
+         localhost:9092
+      zookeeper:
+         localhost:2181
+      docker server: using default configuration
+
 Parent maven project "EbankMat" , include two parts : "Ebank-commons" and "Ebank-JWT".
 Ebank-commons:
    a. Defined unified interface for returning code and result

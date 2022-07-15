@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ebank-commons
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Ebank-commons-deployment
+  namespace: commons
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Ebank-commons-pod
+  template:
+    metadata:
+      labels:
+        app: Ebank-commons-pod
+    spec:
+      hostNetwork: true
+      containers:
+        - name: Ebank-commons-container
+          image: Ebank-commons:latest
+          imagePullPolicy: Never  
+          ports:
+            - containerPort: 8082
+          env:
+            - name: logging.path
+              value: /var/logs

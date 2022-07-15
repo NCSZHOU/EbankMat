@@ -1,0 +1,80 @@
+E-bank money account transaction API System
+
+Description:
+> For security of E-bank api, all the apis can be invoked only after user login. So this
+project use jwt and springboot security to apply the application.
+> Verify Users' authenticate, need MYSQL database to store users' information,the detail we can find it in "EbankMat/ebank.sql".
+We have 4 tables: user,role,user-role and transaction.The table "transaction" is just test
+data, just for kafka producer. If there is another way to fill the test data, we can remove it.
+> Our kafka consumer topic name is "ma-transaction", transaction message can only be
+consumer once, default invoke the api once 50 of them will be consumer.
+> After login, user can check his account's detail by UserController api.
+> In project Ebank-JWT and Ebank-commons we have dockerfile to build the project to local image,
+then use the plugin "docker-maven-plugin" to push the image to remote Docker server.
+> Kubernetes, we have "Ebank-JWT-deployment.yaml" and "Ebank-JWT-service.yaml" to config Kubernetes deployment
+properties and services, then run the script in "Ebank-JWT/script" for deploy the images for nodes.
+Same to project Ebank-commons.
+
+Parent maven project "EbankMat" , include two parts : "Ebank-commons" and "Ebank-JWT".
+Ebank-commons:
+   a. Defined unified interface for returning code and result
+   b. BaseException for handling project exception
+
+Ebank-JWT:
+   config:
+      EbankApiProperties :
+         1. disable jwt token validation for default endpoints
+         2. get the ignore url list from configure file in application-**.yml
+      EbankCurrency:
+         define the default currency for calculate the amount for debit and credit values
+      JwtProperties:
+         define the basic information for token, include username,password,enabled,secret,expiration etc..
+      KafkaConsumerProperties:
+         Kafka consumer properties
+      Swagger2Config:
+         1. create swagger2 api for base package "com.ebank.jwt.system.controller", so that the apis in the
+         base package will expose in the swagger-ui page.
+         2. Once the user login the system, get the token. Click "Authorize" and fill the correct token, it
+         set the global token for the whole session.
+         3. Make sure the security content for regex path "/transactions/.*"
+   constants:
+      define the final constants for the project
+   System:
+      controller:
+         1. JwtAuthController: generate token for login user, refresh token for old token. After get the token,
+            set it to "Authorize" session in the swagger page. If token wasn't set, other apis were blocked.
+            The user login json example:
+               {
+                 "username": "Greyson",
+                 "password": "123456"
+               }
+         2. ProducerController: fetch the test data from mysql data table "transaction" and send them to kafka for test
+            if we have other ways to generate test data for kafka, please remove this api
+         3. TransactionController: get the transactions from kafka consumer topic "ma-transactions", default 50 transactions
+            once according to login user.
+         4. UserController: show the login user's status
+      entity:
+         the model of user/transaction/transactionPage(each 'page' of transaction)
+      kafka:
+         consumer implementation: each double value will be two decimal , every time all the api will consumer
+         50 transactions and manually commit the offset. example of transaction:
+             {
+               "user": "Greyson",
+               "id": "bdefff46-0291-11ed-9941-38f3abe035bf",
+               "type": "+",
+               "amount": 933.5403432450632,
+               "currency": "GBP",
+               "iban": "bdefffec-0291-11ed-9941-38f3abe035bf",
+               "tradetime": "2022-07-13",
+               "description": "Test"
+             }
+      mapper:
+         query sql for user and roles, test data for transactions in db
+      service:
+         UserServiceImpl: get user info from db
+         TransactionService: get the transaction 'page', will contain summarize of transaction size and credit/debit values
+                             and show the transaction detail
+   util:
+     Exchange: mock-up third-part provide the exchange rate of currency to calculate the rate of two currency
+     JwtAuthenticationTokenFilter: to check the user have permission or check the url in the ignore list or not
+     JwtAuthService: generate token or refresh token

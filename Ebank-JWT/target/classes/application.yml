@@ -1,0 +1,32 @@
+---
+server:
+  port: 8880
+spring:
+  config:
+    activate:
+      on-profile: LOCAL
+---
+server:
+  port: 8082
+spring:
+  config:
+    activate:
+      on-profile: SIT
+---
+server:
+  port: 8083
+spring:
+  config:
+    activate:
+      on-profile: UAT
+---
+server:
+  port: 8088
+spring:
+  config:
+    activate:
+      on-profile: PROD
+---
+spring:
+  profiles:
+    active: LOCAL

@@ -1,0 +1,136 @@
+{
+  "groups": [
+    {
+      "name": "ebank",
+      "type": "com.ebank.jwt.config.EbankCurrency",
+      "sourceType": "com.ebank.jwt.config.EbankCurrency"
+    },
+    {
+      "name": "ebank.api",
+      "type": "com.ebank.jwt.config.EbankApiProperties",
+      "sourceType": "com.ebank.jwt.config.EbankApiProperties"
+    },
+    {
+      "name": "ebank.jwt",
+      "type": "com.ebank.jwt.config.JwtProperties",
+      "sourceType": "com.ebank.jwt.config.JwtProperties"
+    },
+    {
+      "name": "spring.kafka",
+      "type": "com.ebank.jwt.config.KafkaProperties",
+      "sourceType": "com.ebank.jwt.config.KafkaProperties"
+    },
+    {
+      "name": "spring.kafka.consumer",
+      "type": "com.ebank.jwt.config.KafkaConsumerProperties",
+      "sourceType": "com.ebank.jwt.config.KafkaConsumerProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "ebank.api.ignore-url",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.ebank.jwt.config.EbankApiProperties"
+    },
+    {
+      "name": "ebank.currency",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.EbankCurrency"
+    },
+    {
+      "name": "ebank.jwt.cors-allowed-methods",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.ebank.jwt.config.JwtProperties"
+    },
+    {
+      "name": "ebank.jwt.cors-allowed-origins",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.ebank.jwt.config.JwtProperties"
+    },
+    {
+      "name": "ebank.jwt.csrf-disabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.ebank.jwt.config.JwtProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "ebank.jwt.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.ebank.jwt.config.JwtProperties"
+    },
+    {
+      "name": "ebank.jwt.expiration",
+      "type": "java.lang.Long",
+      "sourceType": "com.ebank.jwt.config.JwtProperties"
+    },
+    {
+      "name": "ebank.jwt.header",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.JwtProperties"
+    },
+    {
+      "name": "ebank.jwt.pwd-param-name",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.JwtProperties",
+      "defaultValue": "password"
+    },
+    {
+      "name": "ebank.jwt.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.JwtProperties"
+    },
+    {
+      "name": "ebank.jwt.use-default-controller",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.ebank.jwt.config.JwtProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "ebank.jwt.user-param-name",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.JwtProperties",
+      "defaultValue": "username"
+    },
+    {
+      "name": "spring.kafka.bootstrap-servers",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.KafkaProperties"
+    },
+    {
+      "name": "spring.kafka.consumer.auto-commit-interval",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "spring.kafka.consumer.auto-offset-reset",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "spring.kafka.consumer.enable-auto-commit",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "spring.kafka.consumer.group-id",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "spring.kafka.consumer.key-deserializer",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "spring.kafka.consumer.max-poll-records",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.KafkaConsumerProperties"
+    },
+    {
+      "name": "spring.kafka.consumer.value-deserializer",
+      "type": "java.lang.String",
+      "sourceType": "com.ebank.jwt.config.KafkaConsumerProperties"
+    }
+  ],
+  "hints": []
+}

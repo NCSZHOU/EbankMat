@@ -90,3 +90,6 @@ Ebank-JWT:
      Exchange: mock-up third-part provide the exchange rate of currency to calculate the rate of two currency
      JwtAuthenticationTokenFilter: to check the user have permission or check the url in the ignore list or not
      JwtAuthService: generate token or refresh token
+
+Unit Test:
+   for the project Ebank-JWT have many junit5 test class for all the core functions and classes.

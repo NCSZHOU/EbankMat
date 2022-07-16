@@ -4,8 +4,7 @@ Description:
 > For security of E-bank api, all the apis can be invoked only after user login. So this
 project use jwt and springboot security to apply the application.
 > Verify Users' authenticate, need MYSQL database to store users' information,the detail we can find it in "EbankMat/ebank.sql".
-We have 4 tables: user,role,user-role and transaction.The table "transaction" is just test
-data, just for kafka producer. If there is another way to fill the test data, we can remove it.
+We have 3 tables: user,role,user-role, just for kafka producer. If there is another way to fill the test data, we can remove it.
 > Our kafka consumer topic name is "ma-transaction", transaction message can only be
 consumer once, default invoke the api once 50 of them will be consumer.
 > After login, user can check his account's detail by UserController api.
@@ -61,7 +60,7 @@ Ebank-JWT:
                  "username": "Greyson",
                  "password": "123456"
                }
-         2. ProducerController: fetch the test data from mysql data table "transaction" and send them to kafka for test
+         2. ProducerController: generate the test data and send them to kafka for test
             if we have other ways to generate test data for kafka, please remove this api
          3. TransactionController: get the transactions from kafka consumer topic "ma-transactions", default 50 transactions
             once according to login user.

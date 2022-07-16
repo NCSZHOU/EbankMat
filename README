@@ -80,7 +80,8 @@ Ebank-JWT:
                  "iban": "CH9078960170622034845",
                  "tradetime": "2022-07-13",
                  "description": "Test"
-             }mapper:
+             }
+      mapper:
          query sql for user and roles, test data for transactions in db
       service:
          UserServiceImpl: get user info from db

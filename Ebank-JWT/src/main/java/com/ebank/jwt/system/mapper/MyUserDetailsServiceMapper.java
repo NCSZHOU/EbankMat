@@ -23,11 +23,6 @@ public interface MyUserDetailsServiceMapper extends BaseMapper {
             "</script>"})
     List<String> findRoleByUserName(@Param("username") String username);
 
-    @Select("SELECT id\n" +
-            "FROM user u\n" +
-            "WHERE u.user_name = #{username}")
-    String getUserIdByName(@Param("username") String username);
-
     @Select("SELECT *\n" +
             "FROM user u\n" +
             "WHERE u.user_name = #{username}")

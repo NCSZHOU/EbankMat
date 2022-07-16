@@ -1,14 +1,9 @@
 package com.ebank.jwt.util;
 
 import com.ebank.jwt.config.JwtProperties;
-import com.ebank.jwt.system.entity.Transaction;
-import com.ebank.jwt.system.entity.User;
-import com.ebank.jwt.system.mapper.MyUserDetailsServiceMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.iban4j.CountryCode;
-import org.iban4j.Iban;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +22,7 @@ public class JwtTokenUtil {
     private final static Logger logger = LoggerFactory.getLogger(JwtTokenUtil.class);
     @Autowired
     private JwtProperties jwtProperties;
-    @Autowired
-    private MyUserDetailsServiceMapper mapper;
+
     private static final String CLAIM_KEY_CREATED = "created";
     private static final String CLAIM_KEY_USER = "sub";
 
@@ -134,14 +128,5 @@ public class JwtTokenUtil {
         }
         logger.info("Get the username from token success:{}",username);
         return username;
-    }
-    public String generateIban(String username) {
-        User user = mapper.findUserByUserName(username);
-        Iban iban = new Iban.Builder()
-                .countryCode(CountryCode.getByCode("CHE"))
-                .bankCode("78960170")
-                .accountNumber(user.getAccount())
-                .build();
-        return iban.toString();
     }
 }

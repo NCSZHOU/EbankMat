@@ -1,6 +1,11 @@
+D:\interview\Project\EbankMat\Ebank-JWT\src\test\java\com\ebank\jwt\system\TestTwtAuthController.java
+D:\interview\Project\EbankMat\Ebank-JWT\src\test\java\com\ebank\jwt\system\TestProducerController.java
+D:\interview\Project\EbankMat\Ebank-JWT\src\test\java\com\ebank\jwt\system\TestTransactionsController.java
+D:\interview\Project\EbankMat\Ebank-JWT\src\test\java\com\ebank\jwt\system\TestUserController.java
 D:\interview\Project\EbankMat\Ebank-JWT\src\test\java\com\ebank\jwt\util\TestJwtTokenUtil.java
 D:\interview\Project\EbankMat\Ebank-JWT\src\test\java\com\ebank\jwt\util\TestMyRBACService.java
 D:\interview\Project\EbankMat\Ebank-JWT\src\test\java\com\ebank\jwt\util\TestExchange.java
 D:\interview\Project\EbankMat\Ebank-JWT\src\test\java\com\ebank\jwt\system\TestUserServiceImpl.java
+D:\interview\Project\EbankMat\Ebank-JWT\src\test\java\com\ebank\jwt\system\TestConsumer.java
 D:\interview\Project\EbankMat\Ebank-JWT\src\test\java\com\ebank\jwt\util\TestMyUserDetailsService.java
 D:\interview\Project\EbankMat\Ebank-JWT\src\test\java\com\ebank\jwt\util\TestJwtAuthService.java

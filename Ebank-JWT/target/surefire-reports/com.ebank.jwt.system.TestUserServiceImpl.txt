@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.ebank.jwt.system.TestUserServiceImpl
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE! - in com.ebank.jwt.system.TestUserServiceImpl
-com.ebank.jwt.system.TestUserServiceImpl.testGetUserByUserName()  Time elapsed: 0.002 sec  <<< FAILURE!
-java.lang.NullPointerException: Cannot invoke "com.ebank.jwt.system.service.IUserService.getUserByUserName(String)" because "this.iUserService" is null
-	at com.ebank.jwt.system.TestUserServiceImpl.testGetUserByUserName(TestUserServiceImpl.java:22)
-

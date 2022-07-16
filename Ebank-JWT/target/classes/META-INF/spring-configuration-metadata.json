@@ -50,8 +50,7 @@
     {
       "name": "ebank.jwt.csrf-disabled",
       "type": "java.lang.Boolean",
-      "sourceType": "com.ebank.jwt.config.JwtProperties",
-      "defaultValue": true
+      "sourceType": "com.ebank.jwt.config.JwtProperties"
     },
     {
       "name": "ebank.jwt.enabled",
@@ -71,8 +70,7 @@
     {
       "name": "ebank.jwt.pwd-param-name",
       "type": "java.lang.String",
-      "sourceType": "com.ebank.jwt.config.JwtProperties",
-      "defaultValue": "password"
+      "sourceType": "com.ebank.jwt.config.JwtProperties"
     },
     {
       "name": "ebank.jwt.secret",
@@ -82,14 +80,12 @@
     {
       "name": "ebank.jwt.use-default-controller",
       "type": "java.lang.Boolean",
-      "sourceType": "com.ebank.jwt.config.JwtProperties",
-      "defaultValue": true
+      "sourceType": "com.ebank.jwt.config.JwtProperties"
     },
     {
       "name": "ebank.jwt.user-param-name",
       "type": "java.lang.String",
-      "sourceType": "com.ebank.jwt.config.JwtProperties",
-      "defaultValue": "username"
+      "sourceType": "com.ebank.jwt.config.JwtProperties"
     },
     {
       "name": "spring.kafka.bootstrap-servers",

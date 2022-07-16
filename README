@@ -72,16 +72,15 @@ Ebank-JWT:
          consumer implementation: each double value will be two decimal , every time all the api will consumer
          50 transactions and manually commit the offset. example of transaction:
              {
-               "user": "Greyson",
-               "id": "bdefff46-0291-11ed-9941-38f3abe035bf",
-               "type": "+",
-               "amount": 933.5403432450632,
-               "currency": "GBP",
-               "iban": "bdefffec-0291-11ed-9941-38f3abe035bf",
-               "tradetime": "2022-07-13",
-               "description": "Test"
-             }
-      mapper:
+                 "user": "Greyson",
+                 "id": "bf0ce95c-0291-11ed-9941-38f3abe035bf",
+                 "type": "-",
+                 "amount": 139.78898445124642,
+                 "currency": "GBP",
+                 "iban": "CH9078960170622034845",
+                 "tradetime": "2022-07-13",
+                 "description": "Test"
+             }mapper:
          query sql for user and roles, test data for transactions in db
       service:
          UserServiceImpl: get user info from db

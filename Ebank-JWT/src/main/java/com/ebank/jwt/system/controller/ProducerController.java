@@ -49,6 +49,7 @@ public class ProducerController {
         logger.info("Starting produce the test message for Kafka server,User:{},size:{}",username,transactionList.size());
         for(Transaction transaction:transactionList) {
             transaction.setUser(username);
+            transaction.setIban(jwtTokenUtil.generateIban(username));
             kafkaTemplate.send(CommonConstants.TOPIC, JSONObject.toJSONString(transaction));
         }
     }

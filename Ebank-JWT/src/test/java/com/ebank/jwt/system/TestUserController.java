@@ -3,6 +3,7 @@ package com.ebank.jwt.system;
 import com.ebank.jwt.EbankJwtApplication;
 import com.ebank.jwt.system.controller.TransactionController;
 import com.ebank.jwt.system.controller.UserController;
+import com.ebank.jwt.util.JwtAuthService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
@@ -23,12 +24,14 @@ public class TestUserController {
     private final static Logger logger = LoggerFactory.getLogger(TestUserController.class);
     @Autowired
     private UserController userController;
+    @Autowired
+    private JwtAuthService jwtAuthService;
     @Test
     public void testLogin() throws Exception {
+        jwtAuthService.login("Greyson","123456",null);
         MockMvc mockmvc = MockMvcBuilders.standaloneSetup(userController).build();
-        MvcResult result = mockmvc.perform(MockMvcRequestBuilders.get("/transaction/user/info"))
+        MvcResult result = mockmvc.perform(MockMvcRequestBuilders.get("/transaction/user/status"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
                 .andReturn();
         logger.info(result.getResponse().getContentAsString());
     }

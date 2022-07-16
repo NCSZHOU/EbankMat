@@ -18,13 +18,13 @@ com\ebank\jwt\util\MyUserDetails.class
 com\ebank\jwt\system\entity\TransactionPage.class
 com\ebank\jwt\system\entity\Transaction.class
 com\ebank\jwt\config\JwtProperties.class
+com\ebank\jwt\system\common\EbankCommon.class
 com\ebank\jwt\system\controller\ProducerController.class
 com\ebank\jwt\system\service\IUserService.class
 com\ebank\jwt\system\controller\TransactionController.class
 com\ebank\jwt\config\Swagger2Config.class
 com\ebank\jwt\constants\CommonConstants.class
 com\ebank\jwt\config\Swagger2Config$1.class
-com\ebank\jwt\system\mapper\TransactionsServiceMapper.class
 com\ebank\jwt\config\KafkaProperties.class
 com\ebank\jwt\util\MyUserDetailsService.class
 com\ebank\jwt\system\kafka\Consumer.class

@@ -1,5 +1,6 @@
 package com.ebank.jwt.system;
 
+import com.alibaba.fastjson.JSON;
 import com.ebank.jwt.EbankJwtApplication;
 import com.ebank.jwt.system.controller.JwtAuthController;
 import com.ebank.jwt.util.JwtAuthService;
@@ -32,9 +33,9 @@ public class TestTwtAuthController {
         Map<String,String> authorize = new HashMap<>();
         authorize.put("username","Greyson");
         authorize.put("password","123456");
-        MvcResult result = mockmvc.perform(MockMvcRequestBuilders.post("/jwtauth/token",authorize))
+        MvcResult result = mockmvc.perform(MockMvcRequestBuilders.post("/jwtauth/token")
+                        .content(JSON.toJSONString(authorize)).contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
                 .andReturn();
         logger.info(result.getResponse().getContentAsString());
     }

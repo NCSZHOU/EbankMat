@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.ebank.jwt.util.TestJwtAuthService
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0 sec <<< FAILURE! - in com.ebank.jwt.util.TestJwtAuthService
+com.ebank.jwt.util.TestJwtAuthService.testRefresh()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.ebank.jwt.util.JwtAuthService.refreshToken(String)" because "this.jwtAuthService" is null
+	at com.ebank.jwt.util.TestJwtAuthService.testRefresh(TestJwtAuthService.java:31)
+
+com.ebank.jwt.util.TestJwtAuthService.testLoginSuccess()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.ebank.jwt.util.JwtAuthService.login(String, String, java.util.Map)" because "this.jwtAuthService" is null
+	at com.ebank.jwt.util.TestJwtAuthService.testLoginSuccess(TestJwtAuthService.java:24)
+

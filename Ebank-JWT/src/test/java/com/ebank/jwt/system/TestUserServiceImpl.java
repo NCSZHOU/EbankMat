@@ -1,5 +1,6 @@
 package com.ebank.jwt.system;
 
+import com.ebank.jwt.EbankJwtApplication;
 import com.ebank.jwt.system.entity.User;
 import com.ebank.jwt.system.service.IUserService;
 import org.junit.jupiter.api.Assertions;
@@ -10,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest
+@SpringBootTest(classes = EbankJwtApplication.class)
 public class TestUserServiceImpl {
     @Autowired
     private IUserService iUserService;

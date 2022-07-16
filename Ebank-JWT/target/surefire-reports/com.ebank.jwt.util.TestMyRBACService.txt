@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.ebank.jwt.util.TestMyRBACService
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0 sec <<< FAILURE! - in com.ebank.jwt.util.TestMyRBACService
+com.ebank.jwt.util.TestMyRBACService.testFindByUserName()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.ebank.jwt.util.MyRBACService.findByUserName(String)" because "this.myRBACService" is null
+	at com.ebank.jwt.util.TestMyRBACService.testFindByUserName(TestMyRBACService.java:21)
+
+com.ebank.jwt.util.TestMyRBACService.testFindRoleByUserName()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "com.ebank.jwt.util.MyRBACService.findRoleByUserName(String)" because "this.myRBACService" is null
+	at com.ebank.jwt.util.TestMyRBACService.testFindRoleByUserName(TestMyRBACService.java:27)
+

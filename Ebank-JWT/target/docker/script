@@ -1,2 +1,0 @@
-kubectl apply -f Ebank-JWT-deployment.yaml
-kubectl apply -f Ebank-JWT-service.yaml

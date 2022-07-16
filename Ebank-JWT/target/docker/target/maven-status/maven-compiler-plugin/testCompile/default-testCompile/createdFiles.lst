@@ -1,6 +1,0 @@
-com\ebank\jwt\system\TestUserServiceImpl.class
-com\ebank\jwt\util\TestExchange.class
-com\ebank\jwt\util\TestJwtAuthService.class
-com\ebank\jwt\util\TestJwtTokenUtil.class
-com\ebank\jwt\util\TestMyUserDetailsService.class
-com\ebank\jwt\util\TestMyRBACService.class

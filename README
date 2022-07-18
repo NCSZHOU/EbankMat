@@ -92,4 +92,5 @@ Ebank-JWT:
      JwtAuthService: generate token or refresh token
 
 Unit Test:
-   for the project Ebank-JWT have many junit5 test class for all the core functions and classes.
+   - for  the project Ebank-JWT have many junit5 test class for all the core functions and classes.
+   - function test and api contact test in the file "Ebank/Guid&Test.docx"
